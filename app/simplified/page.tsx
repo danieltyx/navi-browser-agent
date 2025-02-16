@@ -56,14 +56,15 @@ function SimplifiedContent() {
           throw new Error('Received empty content from API');
         }
         setContent(data.content);
-      } catch (err) {
+      } catch (err: unknown) {
         console.error('Simplification error:', err);
-        if (err.name === 'AbortError') {
+        if (err && typeof err === 'object' && 'name' in err && err.name === 'AbortError') {
           setError('Request timed out. The webpage might be too large or the server might be busy. Please try again with a smaller page or try later.');
         } else {
-          setError(err instanceof Error ? 
-            `Error: ${err.message}` : 
-            'An unexpected error occurred while simplifying the content'
+          setError(
+            err instanceof Error ? 
+              `Error: ${err.message}` : 
+              'An unexpected error occurred while simplifying the content'
           );
         }
       } finally {
