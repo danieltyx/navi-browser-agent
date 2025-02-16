@@ -14,26 +14,60 @@ function SimplifiedContent() {
 
   useEffect(() => {
     const fetchAndSimplify = async () => {
-      if (!url) return;
+      if (!url) {
+        setError('No URL provided');
+        setLoading(false);
+        return;
+      }
+
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 60000);
 
       try {
+        console.log('Attempting to simplify URL:', url);
         const response = await fetch('/api/simplify', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({ url }),
+          signal: controller.signal
         });
 
+        clearTimeout(timeout);
+
         if (!response.ok) {
-          throw new Error('Failed to simplify content');
+          const errorData = await response.text();
+          console.error('Simplify API error:', {
+            status: response.status,
+            statusText: response.statusText,
+            error: errorData
+          });
+          
+          if (response.status === 504) {
+            throw new Error('The request timed out. The webpage might be too large or the server might be busy. Please try again with a smaller page or try later.');
+          }
+          
+          throw new Error(`Failed to simplify content: ${response.status} ${errorData}`);
         }
 
         const data = await response.json();
+        if (!data.content) {
+          throw new Error('Received empty content from API');
+        }
         setContent(data.content);
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'An error occurred');
+        console.error('Simplification error:', err);
+        if (err.name === 'AbortError') {
+          setError('Request timed out. The webpage might be too large or the server might be busy. Please try again with a smaller page or try later.');
+        } else {
+          setError(err instanceof Error ? 
+            `Error: ${err.message}` : 
+            'An unexpected error occurred while simplifying the content'
+          );
+        }
       } finally {
+        clearTimeout(timeout);
         setLoading(false);
       }
     };
