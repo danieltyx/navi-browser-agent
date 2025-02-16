@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import puppeteer from 'puppeteer';
+// import puppeteer from 'puppeteer';
 import OpenAI from 'openai';
 import { storage } from '@/app/firebase/config';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
@@ -10,7 +10,7 @@ const openai = new OpenAI({
 });
 
 // Add OPTIONS handler
-export async function OPTIONS(request: Request) {
+export async function OPTIONS() {
   return new NextResponse(null, {
     status: 200,
     headers: {
@@ -31,7 +31,7 @@ export async function POST(req: Request) {
 
   try {
     const body = await req.text();
-    let { screenshot, title } = JSON.parse(body);
+    const { screenshot, title } = JSON.parse(body);
     
     if (!screenshot) {
       return NextResponse.json({

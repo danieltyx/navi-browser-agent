@@ -1,13 +1,13 @@
 'use client';
-import { useState, useRef, useEffect, use } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import html2canvas from 'html2canvas';
-import VoiceRecorder from './components/VoiceRecorder';
+// import html2canvas from 'html2canvas';
+// import VoiceRecorder from './components/VoiceRecorder';
 import RecordButton from './components/RecordButton';
 import Link from 'next/link';
 
 import { ElevenLabsClient } from 'elevenlabs';
-import axios from 'axios';
+// import axios from 'axios';
 
 
 interface Screenshot {

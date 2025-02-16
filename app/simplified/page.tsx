@@ -1,11 +1,11 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import CircularText from './CircularText';
 import Image from 'next/image';
 
-export default function SimplifiedPage() {
+function SimplifiedContent() {
   const searchParams = useSearchParams();
   const url = searchParams.get('url');
   const [content, setContent] = useState<string>('');
@@ -99,5 +99,13 @@ export default function SimplifiedPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function SimplifiedPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SimplifiedContent />
+    </Suspense>
   );
 } 

@@ -6,7 +6,7 @@ const openai = new OpenAI({
 });
 
 // Add OPTIONS handler
-export async function OPTIONS(request: Request) {
+export async function OPTIONS() {
   return new NextResponse(null, {
     status: 200,
     headers: {

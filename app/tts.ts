@@ -1,11 +1,11 @@
 'use client';  // Add this to mark as client component
 
-import { ElevenLabsClient } from 'elevenlabs';
+// import { ElevenLabsClient } from 'elevenlabs';
 
-const ELEVENLABS_API_KEY = "sk_bd7534aaeb1c2ea7813388571800026d9d8c8cd3090683f2";
-const client = new ElevenLabsClient({
-  apiKey: ELEVENLABS_API_KEY,
-});
+
+// const client = new ElevenLabsClient({
+//   apiKey: ELEVENLABS_API_KEY,
+// });
 
 export async function speakText(text: string) {
   console.log("Starting TTS for:", text);

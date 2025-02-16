@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@firebase/storage": "^0.13.6",
+    "@types/dotenv": "^8.2.3",
     "axios": "^1.7.9",
     "cheerio": "^1.0.0",
+    "dotenv": "^16.4.7",
     "elevenlabs": "^1.51.0",
     "express": "^4.21.2",
     "firebase": "^11.3.1",
@@ -25,7 +27,8 @@
     "openai": "^4.85.1",
     "puppeteer": "^24.2.1",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "scrapybara": "^2.2.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

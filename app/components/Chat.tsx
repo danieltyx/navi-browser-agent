@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import VoiceRecorder from './VoiceRecorder';
-import { speakText, playTestSound } from '../tts';
+import { speakText } from '../tts';
 
 // ... existing imports and interface definitions ...
 
@@ -81,12 +81,6 @@ export default function Chat() {
       </div>
       
       <div className="flex items-center gap-2 sticky bottom-0 bg-white p-2 border-t">
-        <button
-          onClick={() => playTestSound()}
-          className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
-        >
-          Test Sound
-        </button>
         <input
           type="text"
           value={message}
