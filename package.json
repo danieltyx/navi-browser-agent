@@ -1,0 +1,41 @@
+{
+  "name": "navi",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@firebase/storage": "^0.13.6",
+    "axios": "^1.7.9",
+    "cheerio": "^1.0.0",
+    "elevenlabs": "^1.51.0",
+    "express": "^4.21.2",
+    "firebase": "^11.3.1",
+    "form-data": "^4.0.2",
+    "framer-motion": "^12.4.3",
+    "groq-sdk": "^0.15.0",
+    "html2canvas": "^1.4.1",
+    "install": "^0.13.0",
+    "multer": "^1.4.5-lts.1",
+    "next": "15.1.7",
+    "openai": "^4.85.1",
+    "puppeteer": "^24.2.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.7",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "5.7.3"
+  }
+}
