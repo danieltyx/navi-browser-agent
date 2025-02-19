@@ -1,11 +1,11 @@
-🚀 Navi – Your AI-Powered Browsing Copilot
+# 🚀 Navi – Your AI-Powered Browsing Copilot
 
 Navigate smarter. Navi streamlines your browsing experience with immediate assistance, voice navigation, and intelligent website recommendations based on predicted user intent.
 
-🏆 Won TreeHack 2025: Best Multimodal App Challenge by Groq
+## 🏆 Won TreeHack 2025: Best Multimodal App Challenge by Groq
 🛠️ Built With: Next.js, OpenAI, Groq, Gemini, Mistral, Perplexity, ElevenLabs, Context, Windsurf
 
-🛠️ What It Does
+## 🛠️ What It Does
 
 Navi revolutionizes browsing by offering:
 ✅ Voice Navigation 🎤 – Control your browser with hands-free commands
@@ -14,7 +14,7 @@ Navi revolutionizes browsing by offering:
 ✅ Personalized Reading Suggestions 📚 – Discover new, relevant content automatically
 ✅ Optimized AI Web Extraction ⚡ – Faster and more accurate page processing for AI models
 
-⚙️ How We Built It
+## ⚙️ How We Built It
 
 Navi integrates multiple AI-powered components:
 	•	🖼️ Visual Context Processing – Screenshots of user navigation are analyzed using Visual Language Models (VLMs) to interpret webpage layouts in real time.
@@ -29,7 +29,7 @@ Navi integrates multiple AI-powered components:
 	•	Backend & Contextual Processing: Context, Windsurf
 	•	Voice & Web Extraction: ElevenLabs
 
-🤝 Contributing
+## 🤝 Contributing
 
 Want to contribute to Navi? Here’s how you can help:
 	1.	Fork the repository
@@ -37,5 +37,5 @@ Want to contribute to Navi? Here’s how you can help:
 	3.	Commit your changes
 	4.	Push the branch and submit a PR
 
-📜 License
+## 📜 License
 This project is licensed under the MIT License – see the LICENSE file for details.
